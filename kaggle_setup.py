@@ -2,13 +2,13 @@
 
 !pip install --upgrade kaggle
 
-## upload kaggle credentials kaggle.json to wkdir = '/home/jovyan/work/analysis/DATASCI-WiDS'
+## upload kaggle credentials 'kaggle.json' to wkdir
 
 ## open a new terminal
 
 ## cd ~/.kaggle
 
-## mv ~/work/analysis/DATASCI-WiDS/kaggle.json ./
+## mv ~/wkdir/kaggle.json ./
 
 ## chmod 600 ./kaggle.json
 
