@@ -17,4 +17,4 @@ First Kaggle competition, with a friend (InesT).
 ### Conclusions of the project
 
 Scores obtained on the unlabelled data:
-- submission_catboost_RS.csv : 0.84758
+- submission_catboost_RS_180221.csv : 0.84240
