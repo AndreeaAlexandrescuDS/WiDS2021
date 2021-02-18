@@ -71,41 +71,9 @@ def display_side_by_side(*args):
         html_str+=df.to_html()
     display_html(html_str.replace('table','table style="display:inline"'),raw=True)
 
-## find NAs  
-def inspect_missing_data(df):  
-    '''find NAs for each column of a dataframe'''
-    '''return head&tail of columns with NAs'''
-    missing_data = df.isna().sum().reset_index().sort_values(by=0, ascending=False)
-    no_missing = missing_data[missing_data[0] != 0].shape[0]
-    total_cols = df.shape[1]
-    total_rows = df.shape[0]
-    
-    missing_data.columns = ["name", "missing appearences"]
-    missing_data["%missing from total"] = (missing_data[missing_data["missing appearences"]!=0]["missing appearences"]/total_rows)*100
-    
-    too_much_miss = missing_data[missing_data["%missing from total"] > 80].shape[0]
-    to_drop = missing_data[missing_data["%missing from total"] > 80]["name"].to_list()
-    
-    print("There are {}/{} columns with missing data.".format(no_missing, total_cols))
-    print("There are {}/{} columns with more than 80% missing data".format(too_much_miss, no_missing))
-    print("Features with largest/smallest percent of missing values(top 10): ")
-    
-    tail = round(missing_data.tail(10).sort_values(by='%missing from total'), 2)
-    head = round(missing_data.head(10).sort_values(by='%missing from total'), 2) 
-       
-    return display_side_by_side(head, tail)
-
 ## plot features importance for tree model
 def plot_feat_imp(model):
     feature_importance_df = pd.DataFrame(model.get_feature_importance(prettified=True))
     plt.figure(figsize=(10, 30));
     sns.barplot(x="Importances", y="Feature Id", data=feature_importance_df);
-    plt.title('Feature importance', fontsize=16, weight="bold"); 
-    
-def load_patch(image_id, coor, size=size):
-    """ Load images from Jupyter Notebook """
-    images = save_patch(image_id, coor, size)
-    html = (f'<a href="{images[0]}" target="_blank">{images[0]}</a><br>'
-            f'<a href="{images[1]}" target="_blank">{images[1]}</a><br>'
-            f'<a href="{images[2]}" target="_blank">{images[2]}</a>')
-    return HTML(html)    
+    plt.title('Feature importance', fontsize=16, weight="bold");
