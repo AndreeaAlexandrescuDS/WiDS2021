@@ -100,7 +100,7 @@ def plot_feat_imp(model):
     feature_importance_df = pd.DataFrame(model.get_feature_importance(prettified=True))
     plt.figure(figsize=(10, 30));
     sns.barplot(x="Importances", y="Feature Id", data=feature_importance_df);
-    plt.title('Feature importance'); 
+    plt.title('Feature importance', fontsize=16, weight="bold"); 
     
 def load_patch(image_id, coor, size=size):
     """ Load images from Jupyter Notebook """
