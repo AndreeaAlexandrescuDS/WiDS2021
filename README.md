@@ -14,7 +14,7 @@ First Kaggle competition, with a friend (InesT).
 - kaggle_setup.py : how to download data from kaggle via Kaggle API for python
 - setup.py : needed packages and functions
 - WiDS_v1_catboost_RS.ipynb : first submit, catBoost model with random search for parameter tunning
-- WiDS_lightGBM_hyperopt.ipynb : lightGBM model, parameters tunning with hyperopt 
+- WiDS_lightGBM_hyperopt_numerical_feat.ipynb : lightGBM model using only numerical features, parameters tunning with hyperopt 
 
 ### Conclusions of the project
 
