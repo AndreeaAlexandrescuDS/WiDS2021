@@ -1,0 +1,3 @@
+- https://www.kaggle.com/fatihozturk/2stage-modeling-trick-and-psuedo-labeling-0-873
+- https://www.kaggle.com/lhagiimn/7th-place-solution-wids-2021
+- https://www.kaggle.com/siavrez/2020fatures
